@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App Identity -->
+    <string name="app_name">3D Live Wallpaper</string>
+    <string name="app_description">Beautiful 3D live wallpaper powered by WebGL</string>
+
+    <!-- Wallpaper Service -->
+    <string name="wallpaper_service_name">3D Live Wallpaper</string>
+    <string name="wallpaper_description">Interactive 3D live wallpaper featuring WebGL-powered scenes and smooth animations. Customize your home screen with stunning visual effects.</string>
+
+    <!-- Settings Activity -->
+    <string name="settings_title">Wallpaper Settings</string>
+    <string name="settings_description">Configure your 3D live wallpaper</string>
+
+    <!-- Preview Activity -->
+    <string name="preview_title">Preview</string>
+    <string name="preview_description">Preview your wallpaper before applying</string>
+
+    <!-- Settings Fields -->
+    <string name="content_url_label">Content URL</string>
+    <string name="content_url_hint">https://example.com/scene.html</string>
+    <string name="content_url_helper">Enter a valid HTTPS URL for custom content</string>
+
+    <string name="quality_preset_label">Quality Preset</string>
+    <string name="quality_battery_saver">Battery Saver</string>
+    <string name="quality_standard">Standard</string>
+    <string name="quality_high">High Quality</string>
+
+    <string name="touch_interactivity_label">Touch Interaction</string>
+    <string name="touch_interactivity_summary">Enable touch gestures in the wallpaper</string>
+
+    <string name="frame_rate_label">Frame Rate</string>
+    <string name="frame_rate_24">24 FPS</string>
+    <string name="frame_rate_30">30 FPS</string>
+    <string name="frame_rate_60">60 FPS</string>
+
+    <!-- Presets -->
+    <string name="preset_abstract_particles">Abstract Particles</string>
+    <string name="preset_city_dusk">City at Dusk</string>
+    <string name="preset_ocean_waves">Ocean Waves</string>
+    <string name="preset_galaxy_stars">Galaxy Stars</string>
+    <string name="preset_crystal_formations">Crystal Formations</string>
+
+    <!-- Buttons -->
+    <string name="apply_button">Apply</string>
+    <string name="reset_button">Reset</string>
+    <string name="launch_picker_button">Set Wallpaper</string>
+    <string name="save_button">Save</string>
+    <string name="cancel_button">Cancel</string>
+    <string name="test_url">Test URL</string>
+    <string name="testing_url">Testing...</string>
+    <string name="url_tested">URL Tested</string>
+
+    <!-- Messages -->
+    <string name="settings_saved">Settings saved successfully</string>
+    <string name="settings_reset">Settings reset to default</string>
+    <string name="settings_saved_successfully">Settings saved successfully</string>
+    <string name="invalid_url">Please enter a valid HTTPS URL</string>
+    <string name="network_error">Network connection required</string>
+    <string name="url_test_success">URL is valid and accessible</string>
+    <string name="url_test_failed">URL test failed</string>
+
+    <!-- Notifications -->
+    <string name="wallpaper_applied">Wallpaper applied successfully</string>
+    <string name="wallpaper_removed">Wallpaper removed</string>
+
+    <!-- Error Messages -->
+    <string name="error_service_start">Failed to start wallpaper service</string>
+    <string name="error_webview_init">Failed to initialize web content</string>
+    <string name="error_scene_load">Failed to load scene</string>
+    <string name="error_permission">Permission denied</string>
+    <string name="error_invalid_url">Invalid URL</string>
+    <string name="error_invalid_url_format">Please enter a valid URL format</string>
+    <string name="error_save_failed_invalid_url">Save failed: Invalid URL</string>
+
+    <!-- Accessibility -->
+    <string name="accessibility_wallpaper_preview">3D wallpaper preview showing animated 3D graphics</string>
+    <string name="accessibility_settings_description">Settings for 3D live wallpaper configuration</string>
+    <string name="accessibility_quality_description">Select rendering quality level</string>
+
+    <!-- WebView Bridge -->
+    <string name="js_bridge_name">AndroidBridge</string>
+
+    <!-- Notifications Channel -->
+    <string name="notification_channel_name">Wallpaper Status</string>
+    <string name="notification_channel_description">Notifications for wallpaper status updates</string>
+    <string name="notification_service_running">Wallpaper service running</string>
+
+    <!-- Validation Messages -->
+    <string name="validation_url_empty">URL cannot be empty</string>
+    <string name="validation_url_invalid">Invalid URL format</string>
+    <string name="validation_url_insecure">URL must use HTTPS</string>
+    <string name="validation_url_forbidden">Domain not allowed</string>
+
+    <!-- Loading States -->
+    <string name="loading_scene">Loading 3D scene…</string>
+    <string name="loading_assets">Loading assets…</string>
+    <string name="initializing_renderer">Initializing renderer…</string>
+
+    <!-- Debug (Only for debug builds) -->
+    <string name="debug_webview_enabled">WebView debugging enabled</string>
+    <string name="debug_performance_mode">Performance monitoring active</string>
+
+    <!-- Arrays -->
+    <string-array name="quality_options">
+        <item>Battery Saver</item>
+        <item>Standard</item>
+        <item>High Quality</item>
+    </string-array>
+
+</resources>

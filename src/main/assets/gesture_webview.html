@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Gesture Bridge Test</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            color: #4a5568;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+        
+        .status {
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 10px;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .status.connected {
+            background: linear-gradient(135deg, #4ade80, #22c55e);
+            color: white;
+            animation: pulse 2s infinite;
+        }
+        
+        .status.disconnected {
+            background: linear-gradient(135deg, #f87171, #ef4444);
+            color: white;
+        }
+        
+        .status.active {
+            background: linear-gradient(135deg, #60a5fa, #3b82f6);
+            color: white;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+        
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .gesture-area {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            border: 3px solid #e2e8f0;
+            border-radius: 15px;
+            height: 400px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .gesture-area:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .gesture-area.active {
+            background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
+            border-color: #3b82f6;
+        }
+        
+        .gesture-area .content {
+            text-align: center;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .gesture-area .title {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .gesture-area .instructions {
+            font-size: 1em;
+            opacity: 0.9;
+            max-width: 300px;
+        }
+        
+        .controls {
+            background: #f8fafc;
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .controls h3 {
+            margin-bottom: 20px;
+            color: #4a5568;
+            font-size: 1.3em;
+        }
+        
+        .control-group {
+            margin-bottom: 20px;
+        }
+        
+        .control-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #64748b;
+        }
+        
+        .btn-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        button {
+            padding: 12px 16px;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        button:active {
+            transform: translateY(0);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+        }
+        
+        .btn-success {
+            background: linear-gradient(135deg, #4ade80, #22c55e);
+            color: white;
+        }
+        
+        .btn-warning {
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            color: white;
+        }
+        
+        .btn-danger {
+            background: linear-gradient(135deg, #f87171, #ef4444);
+            color: white;
+        }
+        
+        .btn-info {
+            background: linear-gradient(135deg, #60a5fa, #3b82f6);
+            color: white;
+        }
+        
+        .stats {
+            background: #f8fafc;
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .stat-item {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
+        }
+        
+        .stat-value {
+            font-size: 2em;
+            font-weight: bold;
+            color: #4f46e5;
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            color: #64748b;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .log-container {
+            background: #1e293b;
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 30px;
+        }
+        
+        .log-header {
+            display: flex;
+            justify-content: between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .log-header h3 {
+            color: #e2e8f0;
+            font-size: 1.3em;
+        }
+        
+        .log-controls {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .log {
+            background: #0f172a;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            padding: 20px;
+            height: 300px;
+            overflow-y: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+        
+        .log-entry {
+            margin-bottom: 8px;
+            padding: 4px 0;
+        }
+        
+        .log-timestamp {
+            color: #64748b;
+            font-size: 0.9em;
+        }
+        
+        .log-level {
+            font-weight: bold;
+            margin: 0 8px;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.8em;
+        }
+        
+        .log-level.info { background: #3b82f6; color: white; }
+        .log-level.success { background: #22c55e; color: white; }
+        .log-level.warning { background: #f59e0b; color: white; }
+        .log-level.error { background: #ef4444; color: white; }
+        .log-level.debug { background: #6366f1; color: white; }
+        
+        .log-message {
+            color: #e2e8f0;
+        }
+        
+        .floating-feedback {
+            position: absolute;
+            background: rgba(79, 70, 229, 0.9);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            animation: fadeOut 2s ease-out forwards;
+            z-index: 1000;
+        }
+        
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0.8);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 20px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .btn-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎯 JavaScript Gesture Bridge</h1>
+            <p style="color: #64748b; font-size: 1.1em;">Test Suite for Android WebView Integration</p>
+        </div>
+        
+        <div id="status" class="status disconnected">
+            Status: Initializing bridge...
+        </div>
+        
+        <div class="main-grid">
+            <div class="gesture-area" id="gestureArea">
+                <div class="content">
+                    <div class="title">Gesture Test Area</div>
+                    <div class="instructions">
+                        Click, tap, swipe, or perform gestures here to test the bridge communication with Android.
+                        <br><br>
+                        <strong>Supported Gestures:</strong><br>
+                        • Tap & Double Tap<br>
+                        • Swipe (all directions)<br>
+                        • Long Press<br>
+                        • Pinch & Rotate
+                    </div>
+                </div>
+            </div>
+            
+            <div class="controls">
+                <h3>🎮 Test Controls</h3>
+                
+                <div class="control-group">
+                    <label>Basic Gestures</label>
+                    <div class="btn-grid">
+                        <button onclick="testTap()" class="btn-primary">Tap</button>
+                        <button onclick="testDoubleTap()" class="btn-success">Double Tap</button>
+                        <button onclick="testLongPress()" class="btn-warning">Long Press</button>
+                        <button onclick="testSwipe()" class="btn-info">Swipe</button>
+                    </div>
+                </div>
+                
+                <div class="control-group">
+                    <label>Advanced Gestures</label>
+                    <div class="btn-grid">
+                        <button onclick="testPinch()" class="btn-primary">Pinch</button>
+                        <button onclick="testRotation()" class="btn-success">Rotate</button>
+                        <button onclick="testDrag()" class="btn-warning">Drag</button>
+                        <button onclick="testScale()" class="btn-info">Scale</button>
+                    </div>
+                </div>
+                
+                <div class="control-group">
+                    <label>Bridge Operations</label>
+                    <div class="btn-grid">
+                        <button onclick="testStateSync()" class="btn-success">Sync State</button>
+                        <button onclick="updateTestState()" class="btn-warning">Update State</button>
+                        <button onclick="forceBatchProcess()" class="btn-primary">Force Batch</button>
+                        <button onclick="toggleBridge()" class="btn-danger">Toggle Bridge</button>
+                    </div>
+                </div>
+                
+                <div class="control-group">
+                    <label>Actions</label>
+                    <div class="btn-grid">
+                        <button onclick="clearLog()" class="btn-danger">Clear Log</button>
+                        <button onclick="exportLog()" class="btn-info">Export Log</button>
+                        <button onclick="resetStats()" class="btn-warning">Reset Stats</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="stats">
+            <h3 style="margin-bottom: 20px; color: #4a5568;">📊 Statistics</h3>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-value" id="totalEvents">0</div>
+                    <div class="stat-label">Total Events</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="batchEvents">0</div>
+                    <div class="stat-label">Batch Events</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="queueSize">0</div>
+                    <div class="stat-label">Queue Size</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="errorsCount">0</div>
+                    <div class="stat-label">Errors</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="stateChanges">0</div>
+                    <div class="stat-label">State Changes</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="bridgeUptime">0s</div>
+                    <div class="stat-label">Bridge Uptime</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="log-container">
+            <div class="log-header">
+                <h3>📋 Event Log</h3>
+                <div class="log-controls">
+                    <button onclick="downloadLog()" class="btn-info" style="padding: 8px 12px; font-size: 12px;">Download</button>
+                    <button onclick="copyLog()" class="btn-primary" style="padding: 8px 12px; font-size: 12px;">Copy</button>
+                </div>
+            </div>
+            <div class="log" id="eventLog"></div>
+        </div>
+    </div>
+
+    <!-- Load Gesture Bridge Templates -->
+    <script src="JavascriptGestureBridgeTemplates.js"></script>
+    
+    <script>
+        // Application state
+        let appState = {
+            totalEvents: 0,
+            batchEvents: 0,
+            errorsCount: 0,
+            stateChanges: 0,
+            startTime: Date.now(),
+            bridgeConnected: false,
+            isTestMode: false
+        };
+        
+        // Initialize application
+        document.addEventListener('DOMContentLoaded', function() {
+            log('Application initialized', 'info');
+            
+            // Check for gesture bridge
+            checkBridgeAvailability();
+            
+            // Set up event listeners
+            setupEventListeners();
+            
+            // Set up gesture area
+            setupGestureArea();
+            
+            // Start stats updater
+            startStatsUpdater();
+            
+            log('Ready for gesture testing', 'success');
+        });
+        
+        // Check bridge availability
+        function checkBridgeAvailability() {
+            setTimeout(() => {
+                if (window.JavaScriptGestureBridge) {
+                    updateStatus('Connected', 'connected');
+                    appState.bridgeConnected = true;
+                    log('Gesture bridge detected and ready', 'success');
+                } else {
+                    updateStatus('Disconnected - Using Test Mode', 'disconnected');
+                    appState.bridgeConnected = false;
+                    appState.isTestMode = true;
+                    log('Bridge not available, running in test mode', 'warning');
+                }
+            }, 1000);
+        }
+        
+        // Update status display
+        function updateStatus(message, className) {
+            const statusDiv = document.getElementById('status');
+            statusDiv.textContent = 'Status: ' + message;
+            statusDiv.className = 'status ' + className;
+        }
+        
+        // Setup event listeners
+        function setupEventListeners() {
+            if (window.JavaScriptGestureBridge) {
+                // Listen for gesture events
+                window.JavaScriptGestureBridge.addEventListener('gesture', (event) => {
+                    handleGestureEvent(event);
+                });
+                
+                // Listen for batch events
+                window.JavaScriptGestureBridge.addEventListener('batch', (events) => {
+                    handleBatchEvents(events);
+                });
+                
+                // Listen for state changes
+                window.JavaScriptGestureBridge.addEventListener('stateChanged', (change) => {
+                    handleStateChange(change);
+                });
+                
+                // Listen for errors
+                window.JavaScriptGestureBridge.addEventListener('error', (error) => {
+                    handleError(error);
+                });
+                
+                // Log configuration
+                const config = window.JavaScriptGestureBridge.config;
+                log('Bridge config: batchSize=' + config.batchSize + ', timeout=' + config.batchTimeout, 'debug');
+            }
+        }
+        
+        // Setup gesture area
+        function setupGestureArea() {
+            const gestureArea = document.getElementById('gestureArea');
+            let touchStartTime = 0;
+            let touchStartPos = { x: 0, y: 0 };
+            let lastTapTime = 0;
+            
+            gestureArea.addEventListener('touchstart', (e) => {
+                e.preventDefault();
+                touchStartTime = Date.now();
+                const touch = e.touches[0];
+                touchStartPos = { x: touch.clientX, y: touch.clientY };
+                
+                gestureArea.classList.add('active');
+                showFloatingFeedback(touch.clientX, touch.clientY, 'Touch Start');
+            });
+            
+            gestureArea.addEventListener('touchend', (e) => {
+                e.preventDefault();
+                const touch = e.changedTouches[0];
+                const touchEndTime = Date.now();
+                const duration = touchEndTime - touchStartTime;
+                const distance = Math.sqrt(
+                    Math.pow(touch.clientX - touchStartPos.x, 2) + 
+                    Math.pow(touch.clientY - touchStartPos.y, 2)
+                );
+                
+                gestureArea.classList.remove('active');
+                
+                // Determine gesture type
+                if (duration < 200 && distance < 10) {
+                    // Tap gesture
+                    const now = Date.now();
+                    if (now - lastTapTime < 300) {
+                        handleTestEvent('double_tap', touch.clientX, touch.clientY);
+                        lastTapTime = 0;
+                    } else {
+                        handleTestEvent('tap', touch.clientX, touch.clientY);
+                        lastTapTime = now;
+                    }
+                } else if (duration > 500 && distance < 20) {
+                    // Long press
+                    handleTestEvent('long_press', touch.clientX, touch.clientY);
+                } else if (distance > 50) {
+                    // Swipe
+                    const deltaX = touch.clientX - touchStartPos.x;
+                    const deltaY = touch.clientY - touchStartPos.y;
+                    const direction = getSwipeDirection(deltaX, deltaY);
+                    handleTestEvent('swipe', touch.clientX, touch.clientY, {
+                        direction: direction,
+                        deltaX: deltaX,
+                        deltaY: deltaY
+                    });
+                }
+            });
+        }
+        
+        // Get swipe direction
+        function getSwipeDirection(deltaX, deltaY) {
+            const angle = Math.atan2(deltaY, deltaX) * 180 / Math.PI;
+            if (angle >= -45 && angle < 45) return 'right';
+            if (angle >= 45 && angle < 135) return 'down';
+            if (angle >= 135 || angle < -135) return 'left';
+            if (angle >= -135 && angle < -45) return 'up';
+            return 'unknown';
+        }
+        
+        // Show floating feedback
+        function showFloatingFeedback(x, y, text) {
+            const feedback = document.createElement('div');
+            feedback.className = 'floating-feedback';
+            feedback.textContent = text;
+            feedback.style.left = x + 'px';
+            feedback.style.top = y + 'px';
+            
+            document.body.appendChild(feedback);
+            
+            setTimeout(() => {
+                feedback.remove();
+            }, 2000);
+        }
+        
+        // Test functions
+        function handleTestEvent(type, x, y, properties = {}) {
+            const event = {
+                type: type,
+                x: x,
+                y: y,
+                timestamp: Date.now(),
+                pointerCount: 1,
+                properties: properties
+            };
+            
+            if (appState.bridgeConnected) {
+                if (window.JavaScriptGestureBridge.sendGestureEvent(event)) {
+                    log('Event sent: ' + type + ' (' + x + ', ' + y + ')', 'success');
+                } else {
+                    log('Failed to send event: ' + type, 'error');
+                }
+            } else {
+                // Test mode - just log
+                log('Test mode - Event: ' + type + ' (' + x + ', ' + y + ')', 'debug');
+            }
+            
+            appState.totalEvents++;
+            updateStats();
+        }
+        
+        // Test functions for buttons
+        function testTap() {
+            const rect = document.getElementById('gestureArea').getBoundingClientRect();
+            const x = rect.left + rect.width / 2 + (Math.random() - 0.5) * 100;
+            const y = rect.top + rect.height / 2 + (Math.random() - 0.5) * 100;
+            handleTestEvent('tap', x, y);
+        }
+        
+        function testDoubleTap() {
+            const rect = document.getElementById('gestureArea').getBoundingClientRect();
+            const x = rect.left + rect.width / 2;
+            const y = rect.top + rect.height / 2;
+            handleTestEvent('double_tap', x, y);
+        }
+        
+        function testLongPress() {
+            const rect = document.getElementById('gestureArea').getBoundingClientRect();
+            const x = rect.left + rect.width / 2;
+            const y = rect.top + rect.height / 2;
+            handleTestEvent('long_press', x, y);
+        }
+        
+        function testSwipe() {
+            const rect = document.getElementById('gestureArea').getBoundingClientRect();
+            const startX = rect.left + 50;
+            const startY = rect.top + rect.height / 2;
+            const endX = rect.left + rect.width - 50;
+            const endY = rect.top + rect.height / 2;
+            
+            handleTestEvent('swipe', endX, endY, {
+                direction: 'right',
+                deltaX: endX - startX,
+                deltaY: 0
+            });
+        }
+        
+        function testPinch() {
+            const rect = document.getElementById('gestureArea').getBoundingClientRect();
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+            handleTestEvent('pinch', centerX, centerY, { scale: 1.5 });
+        }
+        
+        function testRotation() {
+            const rect = document.getElementById('gestureArea').getBoundingClientRect();
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+            handleTestEvent('rotation', centerX, centerY, { rotation: 45 });
+        }
+        
+        function testDrag() {
+            const rect = document.getElementById('gestureArea').getBoundingClientRect();
+            const x = rect.left + rect.width / 2;
+            const y = rect.top + rect.height / 2;
+            handleTestEvent('drag', x, y, { isDragging: true });
+        }
+        
+        function testScale() {
+            const rect = document.getElementById('gestureArea').getBoundingClientRect();
+            const x = rect.left + rect.width / 2;
+            const y = rect.top + rect.height / 2;
+            handleTestEvent('scale', x, y, { scale: 2.0 });
+        }
+        
+        function testStateSync() {
+            if (appState.bridgeConnected && window.JavaScriptGestureBridge) {
+                window.JavaScriptGestureBridge.syncGestureState();
+                log('State sync requested', 'info');
+            } else {
+                log('State sync test (no bridge)', 'debug');
+            }
+        }
+        
+        function updateTestState() {
+            const key = 'test_state_' + Date.now();
+            const value = 'value_' + Math.random().toString(36).substr(2, 8);
+            
+            if (appState.bridgeConnected && window.JavaScriptGestureBridge) {
+                window.JavaScriptGestureBridge.updateGestureState(key, value);
+                log('State update: ' + key + ' = ' + value, 'info');
+            } else {
+                log('State update test: ' + key + ' = ' + value, 'debug');
+            }
+        }
+        
+        function forceBatchProcess() {
+            if (appState.bridgeConnected && window.JavaScriptGestureBridge) {
+                window.JavaScriptGestureBridge.forceBatchProcess();
+                log('Batch processing forced', 'info');
+            } else {
+                log('Batch processing test (no bridge)', 'debug');
+            }
+        }
+        
+        function toggleBridge() {
+            if (appState.bridgeConnected && window.JavaScriptGestureBridge) {
+                const enabled = window.JavaScriptGestureBridge.isEnabled();
+                window.JavaScriptGestureBridge.setEnabled(!enabled);
+                updateStatus(enabled ? 'Disabled' : 'Enabled', enabled ? 'disconnected' : 'connected');
+                log('Bridge ' + (enabled ? 'disabled' : 'enabled'), 'info');
+            } else {
+                log('Bridge toggle test (no bridge)', 'debug');
+            }
+        }
+        
+        // Event handlers
+        function handleGestureEvent(event) {
+            log('Gesture received: ' + event.type + ' (' + event.x + ', ' + event.y + ')', 'success');
+            appState.totalEvents++;
+            updateStats();
+        }
+        
+        function handleBatchEvents(events) {
+            log('Batch received: ' + events.length + ' events', 'info');
+            appState.batchEvents += events.length;
+            appState.totalEvents += events.length;
+            updateStats();
+        }
+        
+        function handleStateChange(change) {
+            log('State change: ' + change.key + ' = ' + change.value, 'debug');
+            appState.stateChanges++;
+            updateStats();
+        }
+        
+        function handleError(error) {
+            log('Bridge error: ' + error.error + ' (' + error.context + ')', 'error');
+            appState.errorsCount++;
+            updateStats();
+        }
+        
+        // Utility functions
+        function log(message, level = 'info') {
+            const logDiv = document.getElementById('eventLog');
+            const timestamp = new Date().toLocaleTimeString();
+            
+            const logEntry = document.createElement('div');
+            logEntry.className = 'log-entry';
+            logEntry.innerHTML = `
+                <span class="log-timestamp">[${timestamp}]</span>
+                <span class="log-level ${level}">${level.toUpperCase()}</span>
+                <span class="log-message">${message}</span>
+            `;
+            
+            logDiv.appendChild(logEntry);
+            logDiv.scrollTop = logDiv.scrollHeight;
+        }
+        
+        function clearLog() {
+            document.getElementById('eventLog').innerHTML = '';
+            log('Log cleared', 'info');
+        }
+        
+        function exportLog() {
+            const logText = document.getElementById('eventLog').textContent;
+            const blob = new Blob([logText], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'gesture-bridge-log-' + Date.now() + '.txt';
+            a.click();
+            URL.revokeObjectURL(url);
+            log('Log exported', 'success');
+        }
+        
+        function downloadLog() {
+            exportLog();
+        }
+        
+        function copyLog() {
+            const logText = document.getElementById('eventLog').textContent;
+            navigator.clipboard.writeText(logText).then(() => {
+                log('Log copied to clipboard', 'success');
+            }).catch(() => {
+                log('Failed to copy log', 'error');
+            });
+        }
+        
+        function resetStats() {
+            appState.totalEvents = 0;
+            appState.batchEvents = 0;
+            appState.errorsCount = 0;
+            appState.stateChanges = 0;
+            appState.startTime = Date.now();
+            updateStats();
+            log('Statistics reset', 'info');
+        }
+        
+        function updateStats() {
+            document.getElementById('totalEvents').textContent = appState.totalEvents;
+            document.getElementById('batchEvents').textContent = appState.batchEvents;
+            document.getElementById('errorsCount').textContent = appState.errorsCount;
+            document.getElementById('stateChanges').textContent = appState.stateChanges;
+            
+            const uptime = Math.floor((Date.now() - appState.startTime) / 1000);
+            document.getElementById('bridgeUptime').textContent = uptime + 's';
+            
+            if (window.JavaScriptGestureBridge) {
+                document.getElementById('queueSize').textContent = window.JavaScriptGestureBridge.getQueueSize();
+            }
+        }
+        
+        function startStatsUpdater() {
+            setInterval(updateStats, 1000);
+        }
+    </script>
+</body>
+</html>

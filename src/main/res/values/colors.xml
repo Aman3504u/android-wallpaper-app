@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Colors -->
+    <color name="primary_color">#2196F3</color>
+    <color name="primary_dark_color">#1976D2</color>
+    <color name="primary_light_color">#BBDEFB</color>
+    
+    <!-- Secondary Colors -->
+    <color name="secondary_color">#03DAC6</color>
+    <color name="secondary_dark_color">#018786</color>
+    
+    <!-- Background Colors -->
+    <color name="settings_background">#F5F5F5</color>
+    <color name="card_background">#FFFFFF</color>
+    <color name="toolbar_background">#2196F3</color>
+    
+    <!-- Text Colors -->
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
+    <color name="toolbar_title_color">#FFFFFF</color>
+    <color name="hint_color">#BDBDBD</color>
+    
+    <!-- Input Colors -->
+    <color name="input_background">#F8F9FA</color>
+    <color name="input_stroke">#2196F3</color>
+    <color name="input_focused_stroke">#1976D2</color>
+    
+    <!-- Button Colors -->
+    <color name="button_primary">#2196F3</color>
+    <color name="button_primary_pressed">#1976D2</color>
+    <color name="button_text_primary">#FFFFFF</color>
+    
+    <color name="button_secondary">#E3F2FD</color>
+    <color name="button_secondary_pressed">#BBDEFB</color>
+    <color name="button_text_secondary">#2196F3</color>
+    
+    <!-- Status Colors -->
+    <color name="success_color">#4CAF50</color>
+    <color name="error_color">#F44336</color>
+    <color name="warning_color">#FF9800</color>
+    <color name="info_color">#2196F3</color>
+    
+    <!-- Divider Colors -->
+    <color name="divider_color">#E0E0E0</color>
+    <color name="separator_color">#BDBDBD</color>
+    
+    <!-- Screen Selection Colors -->
+    <color name="radio_button_selected">#2196F3</color>
+    <color name="radio_button_unselected">#757575</color>
+    
+    <!-- Spinner Colors -->
+    <color name="spinner_background">#F8F9FA</color>
+    <color name="spinner_dropdown_background">#FFFFFF</color>
+    
+    <!-- Card Colors -->
+    <color name="card_shadow">#1A000000</color>
+    <color name="card_border">#E0E0E0</color>
+    
+    <!-- Progress Colors -->
+    <color name="progress_bar_color">#2196F3</color>
+    <color name="progress_background">#E0E0E0</color>
+    
+    <!-- Icon Colors -->
+    <color name="icon_color">#757575</color>
+    <color name="icon_selected_color">#2196F3</color>
+    
+    <!-- Transparent Colors -->
+    <color name="transparent">#00000000</color>
+    <color name="semi_transparent">#80000000</color>
+    
+    <!-- Material Design Colors -->
+    <color name="material_blue_grey_800">#37474F</color>
+    <color name="material_blue_grey_900">#263238</color>
+    <color name="material_grey_100">#F5F5F5</color>
+    <color name="material_grey_300">#E0E0E0</color>
+    <color name="material_grey_500">#9E9E9E</color>
+    <color name="material_grey_700">#616161</color>
+</resources>

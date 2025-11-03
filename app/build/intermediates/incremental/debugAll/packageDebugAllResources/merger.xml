@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3" xmlns:ns1="http://schemas.android.com/tools"><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="main$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/workspace/android_project/app/src/main/res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="main" generated-set="main$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/workspace/android_project/app/src/main/res"><file name="activity_main" path="/workspace/android_project/app/src/main/res/layout/activity_main.xml" qualifiers="" type="layout"/><file name="activity_preview" path="/workspace/android_project/app/src/main/res/layout/activity_preview.xml" qualifiers="" type="layout"/><file name="activity_settings" path="/workspace/android_project/app/src/main/res/layout/activity_settings.xml" qualifiers="" type="layout"/><file name="ic_launcher" path="/workspace/android_project/app/src/main/res/mipmap-hdpi/ic_launcher.png" qualifiers="hdpi-v4" type="mipmap"/><file name="ic_launcher_round" path="/workspace/android_project/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" qualifiers="hdpi-v4" type="mipmap"/><file name="ic_launcher" path="/workspace/android_project/app/src/main/res/mipmap-mdpi/ic_launcher.png" qualifiers="mdpi-v4" type="mipmap"/><file name="ic_launcher_round" path="/workspace/android_project/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" qualifiers="mdpi-v4" type="mipmap"/><file name="ic_launcher" path="/workspace/android_project/app/src/main/res/mipmap-xhdpi/ic_launcher.png" qualifiers="xhdpi-v4" type="mipmap"/><file name="ic_launcher_round" path="/workspace/android_project/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" qualifiers="xhdpi-v4" type="mipmap"/><file name="ic_launcher" path="/workspace/android_project/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" qualifiers="xxhdpi-v4" type="mipmap"/><file name="ic_launcher_round" path="/workspace/android_project/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" qualifiers="xxhdpi-v4" type="mipmap"/><file name="ic_launcher" path="/workspace/android_project/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" qualifiers="xxxhdpi-v4" type="mipmap"/><file name="ic_launcher_round" path="/workspace/android_project/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" qualifiers="xxxhdpi-v4" type="mipmap"/><file path="/workspace/android_project/app/src/main/res/values/colors.xml" qualifiers=""><color name="primary">#2196F3</color><color name="primary_dark">#1976D2</color><color name="primary_light">#BBDEFB</color><color name="on_primary">#FFFFFF</color><color name="secondary">#03DAC6</color><color name="secondary_dark">#018786</color><color name="secondary_light">#B2DFDB</color><color name="on_secondary">#000000</color><color name="background">#FAFAFA</color><color name="background_dark">#121212</color><color name="on_background">#1C1B1F</color><color name="on_background_dark">#E6E6E6</color><color name="surface">#FFFFFF</color><color name="surface_dark">#1E1E1E</color><color name="on_surface">#1C1B1F</color><color name="on_surface_variant">#79747E</color><color name="error">#B3261E</color><color name="on_error">#FFFFFF</color><color name="error_container">#F9DEDC</color><color name="on_error_container">#410E0B</color><color name="success">#4CAF50</color><color name="warning">#FF9800</color><color name="info">#2196F3</color><color name="black">#000000</color><color name="white">#FFFFFF</color><color name="transparent">#00000000</color><color name="semi_transparent">#80000000</color><color name="quarter_alpha">#40000000</color><color name="text_primary">#212121</color><color name="text_secondary">#757575</color><color name="text_hint">#BDBDBD</color><color name="text_disabled">#9E9E9E</color><color name="text_primary_inverse">#FFFFFF</color><color name="text_secondary_inverse">#B3FFFFFF</color><color name="divider">#E0E0E0</color><color name="divider_dark">#424242</color><color name="navigation_bar">#000000</color><color name="status_bar">#1976D2</color><color name="card_background">#FFFFFF</color><color name="card_elevation">#E0E0E0</color><color name="card_border">#E0E0E0</color><color name="switch_thumb">#FFFFFF</color><color name="switch_track">#64000000</color><color name="switch_thumb_checked">#2196F3</color><color name="switch_track_checked">#4D2196F3</color><color name="button_primary">#2196F3</color><color name="button_primary_pressed">#1976D2</color><color name="button_secondary">#E0E0E0</color><color name="button_disabled">#BDBDBD</color><color name="input_background">#F5F5F5</color><color name="input_border">#E0E0E0</color><color name="input_focus">#2196F3</color><color name="input_error">#B3261E</color><color name="wallpaper_preview_background">#000000</color><color name="wallpaper_surface_overlay">#80000000</color><color name="loading_background">#F5F5F5</color><color name="loading_indicator">#2196F3</color><color name="accent_blue">#2196F3</color><color name="accent_green">#4CAF50</color><color name="accent_orange">#FF9800</color><color name="accent_red">#F44336</color><color name="accent_purple">#9C27B0</color><color name="md_theme_light_primary">#1976D2</color><color name="md_theme_light_onPrimary">#FFFFFF</color><color name="md_theme_light_primaryContainer">#BBDEFB</color><color name="md_theme_light_onPrimaryContainer">#0D47A1</color><color name="md_theme_light_secondary">#03DAC6</color><color name="md_theme_light_onSecondary">#000000</color><color name="md_theme_light_secondaryContainer">#B2DFDB</color><color name="md_theme_light_onSecondaryContainer">#004D40</color><color name="md_theme_light_tertiary">#018786</color><color name="md_theme_light_onTertiary">#FFFFFF</color><color name="md_theme_light_tertiaryContainer">#B2DFDB</color><color name="md_theme_light_onTertiaryContainer">#004D40</color><color name="md_theme_light_error">#B3261E</color><color name="md_theme_light_errorContainer">#F9DEDC</color><color name="md_theme_light_onError">#FFFFFF</color><color name="md_theme_light_onErrorContainer">#410E0B</color><color name="md_theme_light_background">#FDFCFF</color><color name="md_theme_light_onBackground">#1C1B1F</color><color name="md_theme_light_surface">#FDFCFF</color><color name="md_theme_light_onSurface">#1C1B1F</color><color name="md_theme_light_surfaceVariant">#E7E0EC</color><color name="md_theme_light_onSurfaceVariant">#79747E</color><color name="md_theme_light_outline">#79747E</color><color name="md_theme_light_inverseOnSurface">#F4EFF4</color><color name="md_theme_light_inverseSurface">#313033</color><color name="md_theme_light_inversePrimary">#AECBFA</color><color name="md_theme_light_shadow">#000000</color><color name="md_theme_light_surfaceTint">#1976D2</color><color name="md_theme_light_outlineVariant">#CAC4D0</color><color name="md_theme_light_scrim">#000000</color><color name="hint">#BDBDBD</color></file><file path="/workspace/android_project/app/src/main/res/values/dimens.xml" qualifiers=""><dimen name="spacing_xs">4dp</dimen><dimen name="spacing_sm">8dp</dimen><dimen name="spacing_md">16dp</dimen><dimen name="spacing_lg">24dp</dimen><dimen name="spacing_xl">32dp</dimen><dimen name="spacing_xxl">48dp</dimen><dimen name="content_padding">16dp</dimen><dimen name="content_padding_horizontal">16dp</dimen><dimen name="content_padding_vertical">8dp</dimen><dimen name="card_margin">8dp</dimen><dimen name="card_padding">16dp</dimen><dimen name="card_corner_radius">12dp</dimen><dimen name="card_elevation">2dp</dimen><dimen name="card_min_height">64dp</dimen><dimen name="item_padding">16dp</dimen><dimen name="item_height">56dp</dimen><dimen name="item_height_small">48dp</dimen><dimen name="item_height_large">72dp</dimen><dimen name="button_height">48dp</dimen><dimen name="button_height_small">36dp</dimen><dimen name="button_height_large">56dp</dimen><dimen name="button_corner_radius">8dp</dimen><dimen name="button_padding_horizontal">24dp</dimen><dimen name="button_padding_vertical">12dp</dimen><dimen name="input_field_height">56dp</dimen><dimen name="input_field_corner_radius">4dp</dimen><dimen name="input_field_margin">16dp</dimen><dimen name="toolbar_height">?attr/actionBarSize</dimen><dimen name="toolbar_elevation">4dp</dimen><dimen name="divider_height">1dp</dimen><dimen name="divider_margin">16dp</dimen><dimen name="list_item_padding">16dp</dimen><dimen name="list_item_height">72dp</dimen><dimen name="list_item_height_small">56dp</dimen><dimen name="list_item_height_large">88dp</dimen><dimen name="icon_size_xs">12dp</dimen><dimen name="icon_size_sm">16dp</dimen><dimen name="icon_size_md">24dp</dimen><dimen name="icon_size_lg">32dp</dimen><dimen name="icon_size_xl">48dp</dimen><dimen name="icon_size_xxl">64dp</dimen><dimen name="avatar_size_xs">24dp</dimen><dimen name="avatar_size_sm">32dp</dimen><dimen name="avatar_size_md">48dp</dimen><dimen name="avatar_size_lg">64dp</dimen><dimen name="avatar_size_xl">96dp</dimen><dimen name="text_size_xs">10sp</dimen><dimen name="text_size_sm">12sp</dimen><dimen name="text_size_md">14sp</dimen><dimen name="text_size_lg">16sp</dimen><dimen name="text_size_xl">18sp</dimen><dimen name="text_size_xxl">20sp</dimen><dimen name="text_size_xxxl">24sp</dimen><dimen name="title_text_size_xs">14sp</dimen><dimen name="title_text_size_sm">16sp</dimen><dimen name="title_text_size_md">18sp</dimen><dimen name="title_text_size_lg">20sp</dimen><dimen name="title_text_size_xl">24sp</dimen><dimen name="title_text_size_xxl">32sp</dimen><dimen name="wallpaper_preview_height">200dp</dimen><dimen name="wallpaper_preview_width">100dp</dimen><dimen name="wallpaper_thumbnail_size">120dp</dimen><dimen name="wallpaper_overlay_height">80dp</dimen><dimen name="status_bar_height">24dp</dimen><dimen name="navigation_bar_height">48dp</dimen><dimen name="animation_duration_fast">150dp</dimen><dimen name="animation_duration_medium">250dp</dimen><dimen name="animation_duration_slow">400dp</dimen><dimen name="dialog_margin">16dp</dimen><dimen name="dialog_padding">24dp</dimen><dimen name="dialog_corner_radius">16dp</dimen><dimen name="dialog_elevation">8dp</dimen><dimen name="loading_indicator_size">48dp</dimen><dimen name="loading_indicator_stroke_width">4dp</dimen><dimen name="screen_margin_horizontal">16dp</dimen><dimen name="screen_margin_vertical">16dp</dimen><dimen name="screen_margin">16dp</dimen><dimen name="grid_spacing">8dp</dimen><dimen name="grid_item_width">120dp</dimen><dimen name="grid_item_height">120dp</dimen><dimen name="badge_size">16dp</dimen><dimen name="badge_size_large">24dp</dimen><dimen name="badge_text_size">10sp</dimen><dimen name="bottom_sheet_height">300dp</dimen><dimen name="bottom_sheet_handle_width">48dp</dimen><dimen name="bottom_sheet_handle_height">4dp</dimen><dimen name="switch_track_width">52dp</dimen><dimen name="switch_track_height">32dp</dimen><dimen name="switch_thumb_size">20dp</dimen><dimen name="seekbar_height">4dp</dimen><dimen name="seekbar_thumb_size">20dp</dimen><dimen name="fab_size">56dp</dimen><dimen name="fab_size_mini">40dp</dimen><dimen name="fab_elevation">8dp</dimen><dimen name="ripple_corner_radius">4dp</dimen><dimen name="min_touch_target_size">48dp</dimen><dimen name="secure_padding">8dp</dimen><dimen name="secure_margin">4dp</dimen></file><file path="/workspace/android_project/app/src/main/res/values/ids.xml" qualifiers=""><item name="webview_load_callback" type="id"/></file><file path="/workspace/android_project/app/src/main/res/values/strings.xml" qualifiers=""><string name="app_name">3D Live Wallpaper</string><string name="app_description">Beautiful 3D live wallpaper powered by WebGL</string><string name="wallpaper_service_name">3D Live Wallpaper</string><string name="wallpaper_description">Interactive 3D live wallpaper featuring WebGL-powered scenes and smooth animations. Customize your home screen with stunning visual effects.</string><string name="settings_title">Wallpaper Settings</string><string name="settings_description">Configure your 3D live wallpaper</string><string name="preview_title">Preview</string><string name="preview_description">Preview your wallpaper before applying</string><string name="content_url_label">Content URL</string><string name="content_url_hint">https://example.com/scene.html</string><string name="content_url_helper">Enter a valid HTTPS URL for custom content</string><string name="quality_preset_label">Quality Preset</string><string name="quality_battery_saver">Battery Saver</string><string name="quality_standard">Standard</string><string name="quality_high">High Quality</string><string name="touch_interactivity_label">Touch Interaction</string><string name="touch_interactivity_summary">Enable touch gestures in the wallpaper</string><string name="frame_rate_label">Frame Rate</string><string name="frame_rate_24">24 FPS</string><string name="frame_rate_30">30 FPS</string><string name="frame_rate_60">60 FPS</string><string name="preset_abstract_particles">Abstract Particles</string><string name="preset_city_dusk">City at Dusk</string><string name="preset_ocean_waves">Ocean Waves</string><string name="preset_galaxy_stars">Galaxy Stars</string><string name="preset_crystal_formations">Crystal Formations</string><string name="apply_button">Apply</string><string name="reset_button">Reset</string><string name="launch_picker_button">Set Wallpaper</string><string name="save_button">Save</string><string name="cancel_button">Cancel</string><string name="test_url">Test URL</string><string name="testing_url">Testing...</string><string name="url_tested">URL Tested</string><string name="settings_saved">Settings saved successfully</string><string name="settings_reset">Settings reset to default</string><string name="settings_saved_successfully">Settings saved successfully</string><string name="invalid_url">Please enter a valid HTTPS URL</string><string name="network_error">Network connection required</string><string name="url_test_success">URL is valid and accessible</string><string name="url_test_failed">URL test failed</string><string name="wallpaper_applied">Wallpaper applied successfully</string><string name="wallpaper_removed">Wallpaper removed</string><string name="error_service_start">Failed to start wallpaper service</string><string name="error_webview_init">Failed to initialize web content</string><string name="error_scene_load">Failed to load scene</string><string name="error_permission">Permission denied</string><string name="error_invalid_url">Invalid URL</string><string name="error_invalid_url_format">Please enter a valid URL format</string><string name="error_save_failed_invalid_url">Save failed: Invalid URL</string><string name="accessibility_wallpaper_preview">3D wallpaper preview showing animated 3D graphics</string><string name="accessibility_settings_description">Settings for 3D live wallpaper configuration</string><string name="accessibility_quality_description">Select rendering quality level</string><string name="js_bridge_name">AndroidBridge</string><string name="notification_channel_name">Wallpaper Status</string><string name="notification_channel_description">Notifications for wallpaper status updates</string><string name="notification_service_running">Wallpaper service running</string><string name="validation_url_empty">URL cannot be empty</string><string name="validation_url_invalid">Invalid URL format</string><string name="validation_url_insecure">URL must use HTTPS</string><string name="validation_url_forbidden">Domain not allowed</string><string name="loading_scene">Loading 3D scene…</string><string name="loading_assets">Loading assets…</string><string name="initializing_renderer">Initializing renderer…</string><string name="debug_webview_enabled">WebView debugging enabled</string><string name="debug_performance_mode">Performance monitoring active</string><string-array name="quality_options">
+        <item>Battery Saver</item>
+        <item>Standard</item>
+        <item>High Quality</item>
+    </string-array></file><file path="/workspace/android_project/app/src/main/res/values/styles.xml" qualifiers=""><style name="TextAppearance.Base">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textAllCaps">false</item>
+    </style><style name="TextAppearance.Body" parent="TextAppearance.Base">
+        <item name="android:textSize">16sp</item>
+        <item name="android:lineSpacingExtra">4dp</item>
+    </style><style name="TextAppearance.Body2" parent="TextAppearance.Base">
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineSpacingExtra">2dp</item>
+    </style><style name="TextAppearance.Caption" parent="TextAppearance.Base">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">?attr/colorOnSurfaceVariant</item>
+    </style><style name="TextAppearance.Headline1" parent="TextAppearance.Base">
+        <item name="android:textSize">24sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style><style name="TextAppearance.Headline2" parent="TextAppearance.Base">
+        <item name="android:textSize">20sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style><style name="TextAppearance.Headline3" parent="TextAppearance.Base">
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style><style name="TextAppearance.Title1" parent="TextAppearance.Base">
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style><style name="TextAppearance.Title2" parent="TextAppearance.Base">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style><style name="TextAppearance.Title3" parent="TextAppearance.Base">
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style><style name="TextAppearance.Button" parent="TextAppearance.Base">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style><style name="TextAppearance.Overline" parent="TextAppearance.Base">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">?attr/colorOnSurfaceVariant</item>
+    </style><style name="ListItemTitle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">@style/TextAppearance.Title1</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+    </style><style name="ListItemSubtitle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">@style/TextAppearance.Body2</item>
+        <item name="android:textColor">?attr/colorOnSurfaceVariant</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:ellipsize">end</item>
+    </style><style name="SettingsHeader">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">@style/TextAppearance.Headline2</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="android:layout_marginTop">@dimen/spacing_lg</item>
+        <item name="android:layout_marginBottom">@dimen/spacing_md</item>
+    </style><style name="SettingsItem">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">@dimen/item_padding</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style><style name="SettingsItemTitle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">@style/TextAppearance.Title1</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+    </style><style name="SettingsItemSummary">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">@style/TextAppearance.Body2</item>
+        <item name="android:textColor">?attr/colorOnSurfaceVariant</item>
+        <item name="android:layout_marginTop">@dimen/spacing_xs</item>
+    </style><style name="InputField" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/spacing_md</item>
+        <item name="android:layout_marginBottom">@dimen/spacing_md</item>
+        <item name="boxStrokeColor">@color/input_focus</item>
+        <item name="hintTextColor">@color/secondary</item>
+        <item name="boxBackgroundColor">@color/input_background</item>
+        <item name="boxCornerRadiusTopStart">@dimen/input_field_corner_radius</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/input_field_corner_radius</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/input_field_corner_radius</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/input_field_corner_radius</item>
+    </style><style name="InputEditText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">@style/TextAppearance.Body</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="android:textColorHint">@color/text_hint</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:singleLine">true</item>
+    </style><style name="Button.Primary" parent="Widget.Material3.Button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/button_height</item>
+        <item name="android:textAppearance">@style/TextAppearance.Button</item>
+        <item name="android:textColor">@color/on_primary</item>
+        <item name="android:backgroundTint">@color/button_primary</item>
+        <item name="android:layout_marginTop">@dimen/spacing_md</item>
+        <item name="android:layout_marginBottom">@dimen/spacing_sm</item>
+    </style><style name="Button.Secondary" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/button_height</item>
+        <item name="android:textAppearance">@style/TextAppearance.Button</item>
+        <item name="android:textColor">@color/primary</item>
+        <item name="strokeColor">@color/primary</item>
+        <item name="android:layout_marginTop">@dimen/spacing_sm</item>
+        <item name="android:layout_marginBottom">@dimen/spacing_sm</item>
+    </style><style name="Button.Text" parent="Widget.Material3.Button.TextButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">@style/TextAppearance.Button</item>
+        <item name="android:textColor">@color/primary</item>
+        <item name="android:layout_marginTop">@dimen/spacing_sm</item>
+        <item name="android:layout_marginBottom">@dimen/spacing_sm</item>
+    </style><style name="Card.Primary">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/card_margin</item>
+        <item name="android:padding">@dimen/card_padding</item>
+        <item name="cardCornerRadius">@dimen/card_corner_radius</item>
+        <item name="cardElevation">@dimen/card_elevation</item>
+        <item name="cardBackgroundColor">@color/card_background</item>
+    </style><style name="Card.Elevated">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/card_margin</item>
+        <item name="android:padding">@dimen/card_padding</item>
+        <item name="cardCornerRadius">@dimen/card_corner_radius</item>
+        <item name="cardElevation">@dimen/card_elevation</item>
+        <item name="cardBackgroundColor">@color/card_background</item>
+        <item name="cardUseCompatPadding">true</item>
+    </style><style name="Switch.Primary">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentEnd">true</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="thumbTint">@color/switch_thumb</item>
+        <item name="trackTint">@color/switch_track</item>
+    </style><style name="Divider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/divider_height</item>
+        <item name="android:layout_marginVertical">@dimen/spacing_md</item>
+        <item name="android:background">@color/divider</item>
+    </style><style name="ProgressBar.Horizontal" parent="Widget.AppCompat.ProgressBar.Horizontal">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/spacing_md</item>
+        <item name="android:layout_marginBottom">@dimen/spacing_md</item>
+        <item name="android:indeterminateTint">@color/loading_indicator</item>
+        <item name="android:progressTint">@color/loading_indicator</item>
+        <item name="android:max">100</item>
+    </style><style name="ProgressBar.Circular" parent="Widget.AppCompat.ProgressBar">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:indeterminateTint">@color/loading_indicator</item>
+    </style><style name="LoadingOverlay">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/semi_transparent</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:gravity">center</item>
+    </style><style name="ErrorText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">@style/TextAppearance.Caption</item>
+        <item name="android:textColor">@color/error</item>
+        <item name="android:layout_marginTop">@dimen/spacing_xs</item>
+        <item name="android:layout_marginStart">@dimen/spacing_md</item>
+        <item name="android:layout_marginEnd">@dimen/spacing_md</item>
+    </style><style name="HelperText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">@style/TextAppearance.Caption</item>
+        <item name="android:textColor">?attr/colorOnSurfaceVariant</item>
+        <item name="android:layout_marginTop">@dimen/spacing_xs</item>
+        <item name="android:layout_marginStart">@dimen/spacing_md</item>
+        <item name="android:layout_marginEnd">@dimen/spacing_md</item>
+    </style><style name="Card">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/spacing_md</item>
+        <item name="android:padding">@dimen/spacing_md</item>
+        <item name="android:background">?attr/colorSurface</item>
+    </style><style name="Switch">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style><style name="TextAppearance.Wallpaper">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">16sp</item>
+    </style><style name="TextAppearance">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">16sp</item>
+    </style><style name="Widget.Material3.TextInputLayout" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style></file><file path="/workspace/android_project/app/src/main/res/values/themes.xml" qualifiers=""><style name="Theme.Wallpaper" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/primary_dark</item>
+        <item name="colorOnPrimary">@color/on_primary</item>
+
+        
+        <item name="colorSecondary">@color/secondary</item>
+        <item name="colorSecondaryVariant">@color/secondary_dark</item>
+        <item name="colorOnSecondary">@color/on_secondary</item>
+
+        
+        <item name="android:colorBackground">@color/background</item>
+        <item name="colorOnBackground">@color/on_background</item>
+
+        
+        <item name="colorSurface">@color/surface</item>
+        <item name="colorOnSurface">@color/on_surface</item>
+
+        
+        <item name="colorError">@color/error</item>
+        <item name="colorOnError">@color/on_error</item>
+
+        
+        <item name="android:statusBarColor">@color/primary_dark</item>
+        <item name="android:windowLightStatusBar" ns1:targetApi="m">false</item>
+        <item name="android:navigationBarColor">@color/navigation_bar</item>
+
+        
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:windowTranslucentNavigation">false</item>
+    </style><style name="Theme.Wallpaper.NoActionBar" parent="Theme.Wallpaper">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+    </style><style name="Theme.Wallpaper.Fullscreen" parent="Theme.Wallpaper.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowBackground">@android:color/black</item>
+        <item name="android:windowDisablePreview">true</item>
+    </style><style name="Theme.Wallpaper.Dark" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/primary_dark</item>
+        <item name="colorPrimaryVariant">@color/primary</item>
+        <item name="colorOnPrimary">@color/on_primary</item>
+        <item name="colorSecondary">@color/secondary_dark</item>
+        <item name="colorOnSecondary">@color/on_secondary</item>
+        <item name="android:colorBackground">@color/background_dark</item>
+        <item name="colorOnBackground">@color/on_background</item>
+    </style><style name="SettingsCardStyle">
+        <item name="android:layout_margin">@dimen/card_margin</item>
+        <item name="android:padding">@dimen/card_padding</item>
+        <item name="cardElevation">@dimen/card_elevation</item>
+        <item name="cardCornerRadius">@dimen/card_corner_radius</item>
+        <item name="android:background">?attr/colorSurface</item>
+    </style><style name="SettingsItemStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">@dimen/item_padding</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+    </style><style name="PrimaryButtonStyle" parent="Widget.Material3.Button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/button_height</item>
+        <item name="android:textColor">@color/on_primary</item>
+        <item name="android:backgroundTint">@color/primary</item>
+        <item name="android:textAllCaps">false</item>
+    </style><style name="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/primary</item>
+        <item name="hintTextColor">@color/secondary</item>
+        <item name="android:textColorHint">@color/hint</item>
+    </style><style name="SwitchStyle" parent="Widget.Material3.CompoundButton.Switch">
+        <item name="thumbTint">@color/switch_thumb</item>
+        <item name="trackTint">@color/switch_track</item>
+    </style><style name="LoadingIndicator">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:indeterminateTint">@color/primary</item>
+    </style><style name="ToolbarStyle" parent="Widget.Material3.Toolbar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="android:background">@color/primary</item>
+        <item name="titleTextColor">@color/on_primary</item>
+        <item name="android:theme">@style/ThemeOverlay.Material3.Dark</item>
+    </style><style name="TextAppearance.Wallpaper.Headline1">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style><style name="TextAppearance.Wallpaper.Headline2">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style><style name="TextAppearance.Wallpaper.Body1">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="android:lineSpacingExtra">4dp</item>
+    </style><style name="TextAppearance.Wallpaper.Body2">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">?attr/colorOnSurfaceVariant</item>
+    </style><style name="TextAppearance.Wallpaper.Caption">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">?attr/colorOnSurfaceVariant</item>
+    </style></file><file name="data_extraction_rules" path="/workspace/android_project/app/src/main/res/xml/data_extraction_rules.xml" qualifiers="" type="xml"/><file name="livewallpaper" path="/workspace/android_project/app/src/main/res/xml/livewallpaper.xml" qualifiers="" type="xml"/><file name="network_security_config" path="/workspace/android_project/app/src/main/res/xml/network_security_config.xml" qualifiers="" type="xml"/></source></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debugAll$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/workspace/android_project/app/src/debugAll/res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debugAll" generated-set="debugAll$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/workspace/android_project/app/src/debugAll/res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="generated$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/workspace/android_project/app/build/generated/res/resValues/debugAll"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="generated" generated-set="generated$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/workspace/android_project/app/build/generated/res/resValues/debugAll"/></dataSet><mergedItems/></merger>

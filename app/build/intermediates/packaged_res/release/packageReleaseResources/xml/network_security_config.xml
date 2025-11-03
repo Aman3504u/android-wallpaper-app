@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Network Security Configuration for 3D Live Wallpaper
+  
+  Enforces secure network connections and restricts access to trusted domains
+  This configuration enhances security by:
+  1. Disallowing cleartext (HTTP) traffic
+  2. Allowing only HTTPS connections
+  3. Specifying trusted domains for remote content
+  4. Enabling certificate pinning for additional security
+-->
+
+<network-security-config>
+    <!--
+      Base configuration for all network connections
+      Disallows cleartext traffic by default
+    -->
+    <base-config cleartextTrafficPermitted="false">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+
+    <!--
+      Debug configuration - Only active in debug builds
+      
+      Allows localhost and development servers for testing
+      This section should be excluded or modified for production builds
+    -->
+    <debug-overrides cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <certificates src="system" />
+            <certificates src="user" /> <!-- For self-signed certs during development -->
+        </trust-anchors>
+        
+        <!-- Allow localhost for development -->
+        <domain-config cleartextTrafficPermitted="true">
+            <domain includeSubdomains="true">localhost</domain>
+            <domain includeSubdomains="true">127.0.0.1</domain>
+            <domain includeSubdomains="true">10.0.2.2</domain> <!-- Android emulator -->
+        </domain-config>
+    </debug-overrides>
+
+    <!--
+      Production configuration - Trusted domains only
+      
+      Define the domains that the wallpaper is allowed to connect to
+      Modify these to match your specific content delivery needs
+    -->
+    <domain-config cleartextTrafficPermitted="false">
+        <!-- Example: Three.js CDN and related resources -->
+        <domain includeSubdomains="true">cdnjs.cloudflare.com</domain>
+        <domain includeSubdomains="true">unpkg.com</domain>
+        
+        <!-- Example: Your custom asset server (if using remote assets) -->
+        <!-- <domain includeSubdomains="true">assets.example.com</domain> -->
+        
+        <!-- WebViewAssetLoader virtual HTTPS domain -->
+        <domain includeSubdomains="true">appassets.androidplatform.net</domain>
+        
+        <!-- Certificate pinning for high-security scenarios -->
+        <!-- Uncomment and configure for production -->
+        <!--
+        <pin-set expiration="2026-01-01">
+            <pin digest="SHA256">AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</pin>
+            <pin digest="SHA256">BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB=</pin>
+        </pin-set>
+        -->
+    </domain-config>
+
+    <!--
+      Special configuration for WebViewAssetLoader
+      
+      Ensures secure serving of local assets
+      This is used for accessing packaged web content
+    -->
+    <domain-config cleartextTrafficPermitted="false">
+        <domain includeSubdomains="true">appassets.androidplatform.net</domain>
+    </domain-config>
+
+</network-security-config>

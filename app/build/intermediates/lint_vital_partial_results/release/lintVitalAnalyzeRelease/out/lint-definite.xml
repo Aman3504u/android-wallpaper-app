@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<incidents format="6" by="lint 8.5.2" type="incidents">
+
+    <incident
+        id="FullBackupContent"
+        severity="fatal"
+        message="`temp_cache.db` is not in an included path">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*resDir*0}/xml/data_extraction_rules.xml"
+            line="16"
+            column="42"
+            startOffset="493"
+            endLine="16"
+            endColumn="55"
+            endOffset="506"/>
+    </incident>
+
+    <incident
+        id="FullBackupContent"
+        severity="fatal"
+        message="`webview_cache/` is not in an included path">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*resDir*0}/xml/data_extraction_rules.xml"
+            line="17"
+            column="38"
+            startOffset="547"
+            endLine="17"
+            endColumn="52"
+            endOffset="561"/>
+    </incident>
+
+    <incident
+        id="FullBackupContent"
+        severity="fatal"
+        message="`crash_reports/` is not in an included path">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*resDir*0}/xml/data_extraction_rules.xml"
+            line="18"
+            column="38"
+            startOffset="602"
+            endLine="18"
+            endColumn="52"
+            endOffset="616"/>
+    </incident>
+
+    <incident
+        id="FullBackupContent"
+        severity="fatal"
+        message="`webview_cache/` is not in an included path">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*resDir*0}/xml/data_extraction_rules.xml"
+            line="26"
+            column="38"
+            startOffset="888"
+            endLine="26"
+            endColumn="52"
+            endOffset="902"/>
+    </incident>
+
+    <incident
+        id="FullBackupContent"
+        severity="fatal"
+        message="`temp_*` is not in an included path">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*resDir*0}/xml/data_extraction_rules.xml"
+            line="27"
+            column="42"
+            startOffset="947"
+            endLine="27"
+            endColumn="48"
+            endOffset="953"/>
+    </incident>
+
+    <incident
+        id="NetworkSecurityConfig"
+        severity="fatal"
+        message="Nested `&lt;domain-config>` elements are not allowed in `debug-overrides`">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*resDir*0}/xml/network_security_config.xml"
+            line="37"
+            column="10"
+            startOffset="1234"
+            endLine="37"
+            endColumn="23"
+            endOffset="1247"/>
+    </incident>
+
+    <incident
+        id="NetworkSecurityConfig"
+        severity="fatal"
+        message="Duplicate domain names are not allowed">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*resDir*0}/xml/network_security_config.xml"
+            line="78"
+            column="42"
+            startOffset="2990"
+            endLine="78"
+            endColumn="71"
+            endOffset="3019"/>
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*resDir*0}/xml/network_security_config.xml"
+            line="59"
+            column="42"
+            startOffset="2276"
+            endLine="59"
+            endColumn="71"
+            endOffset="2305"
+            message="Already declared here"/>
+    </incident>
+
+    <incident
+        id="ResourceCycle"
+        severity="fatal"
+        message="Style Resource definition cycle: Widget.Material3.TextInputLayout => Widget.Material3.TextInputLayout.OutlinedBox => Widget.Material3.TextInputLayout">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*resDir*0}/values/styles.xml"
+            line="292"
+            column="52"
+            startOffset="13619"
+            endLine="292"
+            endColumn="105"
+            endOffset="13672"
+            message="Reference from @style/Widget.Material3.TextInputLayout to style/Widget.Material3.TextInputLayout here"/>
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*resDir*0}/values/themes.xml"
+            line="92"
+            column="12"
+            startOffset="4269"
+            endLine="92"
+            endColumn="63"
+            endOffset="4320"
+            message="Reference from @style/Widget.Material3.TextInputLayout.OutlinedBox to style/Widget.Material3.TextInputLayout here"/>
+    </incident>
+
+</incidents>

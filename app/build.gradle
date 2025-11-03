@@ -1,0 +1,158 @@
+/*
+ * App-level build configuration for 3D Live Wallpaper
+ * Targets Android 15 (API 35) with WebView integration
+ */
+
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.example.wallpaper'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId "com.example.wallpaper"
+        minSdk 24
+        targetSdk 35
+        versionCode 1
+        versionName "1.0.0"
+
+        // Enable multidex for complex apps
+        multiDexEnabled true
+
+        // Vector drawables support
+        vectorDrawables {
+            useSupportLibrary true
+        }
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    // Build types for different configurations
+    buildTypes {
+        debug {
+            debuggable true
+            // Enable WebView debugging in debug builds
+            buildConfigField "boolean", "WEBVIEW_DEBUG", "true"
+            // Disable minification for easier debugging
+            minifyEnabled false
+            shrinkResources false
+        }
+        release {
+            debuggable false
+            buildConfigField "boolean", "WEBVIEW_DEBUG", "false"
+            // Enable minification and obfuscation
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debugAll {
+            debuggable true
+            buildConfigField "boolean", "WEBVIEW_DEBUG", "true"
+            minifyEnabled false
+            matchingFallbacks = ['debug']
+        }
+    }
+
+    // Compile options
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    // Kotlin options
+    kotlinOptions {
+        jvmTarget = '17'
+        freeCompilerArgs += [
+            '-Xjvm-default=all',
+            '-Xuse-ir',
+            '-opt-in=androidx.compose.ui.ExperimentalComposeUiApi'
+        ]
+    }
+
+    // Build features
+    buildFeatures {
+        viewBinding true
+        dataBinding true
+        buildConfig true
+    }
+
+    // Packaging options
+    packagingOptions {
+        resources {
+            excludes += ['/META-INF/{AL2.0,LGPL2.1}']
+        }
+    }
+
+    // Bundle configuration for Play Store
+    bundle {
+        language {
+            enableSplit = false
+        }
+        density {
+            enableSplit = true
+        }
+        abi {
+            enableSplit = true
+        }
+    }
+}
+
+dependencies {
+    // Core Android dependencies
+    implementation 'androidx.core:core-ktx:1.12.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.11.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+    // AndroidX lifecycle components
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.7.0'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.7.0'
+
+    // Activity and Fragment
+    implementation 'androidx.activity:activity-ktx:1.8.2'
+    implementation 'androidx.fragment:fragment-ktx:1.6.2'
+
+    // WebView and WebKit (Android 15 support)
+    implementation 'androidx.webkit:webkit:1.9.0'
+
+    // Wallpaper-specific dependencies
+    implementation 'androidx.annotation:annotation:1.7.1'
+
+    // Preferences
+    implementation 'androidx.preference:preference-ktx:1.2.1'
+
+    // JSON handling
+    implementation 'com.google.code.gson:gson:2.10.1'
+
+    // Coroutines
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3'
+
+    // Testing dependencies
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'androidx.test:core:1.5.0'
+    testImplementation 'androidx.test.ext:junit:1.1.5'
+    testImplementation 'androidx.test:runner:1.5.2'
+    testImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    // Android instrumentation tests
+    androidTestImplementation 'androidx.test.ext:junit-ktx:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    androidTestImplementation 'androidx.test:rules:1.5.0'
+}
+
+// Custom configuration tasks
+task printVersionInfo {
+    doLast {
+        println "Build Configuration:"
+        println "  App ID: ${android.defaultConfig.applicationId}"
+        println "  Min SDK: ${android.defaultConfig.minSdk}"
+        println "  Target SDK: ${android.defaultConfig.targetSdk}"
+        println "  Compile SDK: ${android.compileSdk}"
+        println "  Debuggable: ${android.buildTypes.debug.debuggable}"
+        println "  WebView Debug: ${android.buildTypes.debug.buildConfigFields['WEBVIEW_DEBUG']}"
+    }
+}
