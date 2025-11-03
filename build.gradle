@@ -1,0 +1,20 @@
+// Top-level build file for Android 3D Live Wallpaper
+// This file contains configuration common to all modules.
+// For Android 15 (API 35) targeting
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.5.2'
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.20'
+    }
+}
+
+// Repository configuration moved to settings.gradle
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
